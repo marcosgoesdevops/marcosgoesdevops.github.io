@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Níveis — Pescaria do Chat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎣</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">🎣 Pescaria do Chat</a>
+  <nav class="site-nav">
+      <a href="index.html">Início</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="loja.html">Loja</a>
+      <a href="niveis.html" class="active">Níveis</a>
+  </nav>
+</header>
+<main>
+
+<h1 class="page-title">Níveis</h1>
+<p class="subtitle">Progressão de longo prazo: pescando você ganha xp, sobe
+de nível (0 a 99) e fica melhor pescando.</p>
+
+<section class="block">
+  <h2>Como ganhar XP</h2>
+  <p>Toda captura dá xp igual à quantidade de pontos daquele peixe —
+  pontos e xp sobem sempre juntos, no mesmo ritmo. Isso já aparece na
+  própria mensagem de captura no chat, como <code>(+X pontos/xp)</code>.</p>
+</section>
+
+<section class="block">
+  <h2>O que o nível melhora</h2>
+  <p>Quanto maior o nível, três coisas melhoram, até um máximo no nível
+  99:</p>
+  <ul class="command-list">
+    <li><code>Chance de fisgar algo</code><span>sobe de 50% até 65.0%</span></li>
+    <li><code>Chance de peixe raro</code><span>Incomum, Raro, Lendário, Mítico, Secreto ficam até 2.0x mais prováveis — o mesmo tanto que a Isca Milagrosa já dá, e os dois efeitos se somam se você usar os dois juntos</span></li>
+    <li><code>Twishcoins ao vender</code><span>até +30% a mais por peixe vendido</span></li>
+  </ul>
+  <table class="ledger">
+    <thead>
+      <tr>
+        <th>Nível</th><th>XP total</th><th>Chance de fisgar</th>
+        <th>Multiplicador de raridade*</th><th>Bônus ao vender</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td class="num">50.0%</td>
+        <td class="num">1.00x</td>
+        <td class="num">+0%</td>
+      </tr>
+      <tr>
+        <td class="num">10</td>
+        <td class="num">500</td>
+        <td class="num">51.5%</td>
+        <td class="num">1.10x</td>
+        <td class="num">+3%</td>
+      </tr>
+      <tr>
+        <td class="num">25</td>
+        <td class="num">3,125</td>
+        <td class="num">53.8%</td>
+        <td class="num">1.25x</td>
+        <td class="num">+8%</td>
+      </tr>
+      <tr>
+        <td class="num">50</td>
+        <td class="num">12,500</td>
+        <td class="num">57.6%</td>
+        <td class="num">1.51x</td>
+        <td class="num">+15%</td>
+      </tr>
+      <tr>
+        <td class="num">75</td>
+        <td class="num">28,125</td>
+        <td class="num">61.4%</td>
+        <td class="num">1.76x</td>
+        <td class="num">+23%</td>
+      </tr>
+      <tr>
+        <td class="num">99</td>
+        <td class="num">49,005</td>
+        <td class="num">65.0%</td>
+        <td class="num">2.00x</td>
+        <td class="num">+30%</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:0.85rem;color:var(--text-muted);margin-top:0.5rem">
+    *Aplicado a incomum, raro, lendário, mítico, secreto — nunca a Comum, nem a Nakofishes.</p>
+</section>
+
+<section class="block">
+  <h2>Exceção: Nakofishes</h2>
+  <p>A raridade mais rara do jogo (<strong style="color:var(--tier-nakofishes)">Nakofishes</strong>,
+  hoje só o <code>nakocamarão</code>) não é afetada pelo nível — pescar um
+  continua sendo pura sorte, sempre, não importa o quão alto seu nível
+  esteja. Nem isca nem nível ajudam nesse caso, de propósito — veja a
+  <a href="tutorial.html">página de tutorial</a> pra mais sobre raridades.</p>
+</section>
+
+<section class="block">
+  <h2>A curva de nível</h2>
+  <p>Os primeiros níveis sobem rápido — dá pra chegar no nível 10 já nas
+  primeiras horas jogando — mas o ritmo fica bem mais devagar conforme
+  sobe. Chegar no nível 99 é uma meta de longuíssimo
+  prazo, não algo pra bater numa tarde ou numa semana.</p>
+  <p>O sistema é novo pra todo mundo: mesmo quem já tinha muitos pontos ou
+  peixes pescados antes do sistema de nível existir começa do zero — o
+  histórico antigo não virou nível automaticamente.</p>
+</section>
+
+<section class="block">
+  <h2>Como conferir seu nível</h2>
+  <ul class="command-list">
+    <li><code>$nivel</code> / <code>$level</code><span>nível, xp total e quanto falta pro próximo</span></li>
+    <li><code>$inventario</code><span>também mostra seu nível junto com seus pontos</span></li>
+  </ul>
+  <p>E toda vez que você sobe de nível, o bot avisa sozinho no chat! 🌟</p>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p>Pescaria do Chat — minigame de pesca pro chat da Twitch. Comandos usam o prefixo <code>$</code>.</p>
+</footer>
+</body>
+</html>
