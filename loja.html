@@ -89,6 +89,11 @@
   enquanto um turbo ainda está ativo <strong>soma</strong> o tempo, não
   reinicia. Depois que o tempo acaba, o cooldown volta pro normal da vara
   que você tiver equipada.</p>
+  <p><strong>Turbo Torneio</strong> é diferente dos outros: só pode ser
+  comprado por quem já deu <code>$entrar</code> num torneio que está
+  rolando naquele momento, no máximo uma vez por torneio, e o efeito é
+  cortado na hora se o torneio acabar antes dos 3 minutos passarem —
+  não some no seu tempo normalmente como os outros turbos.</p>
   <table class="ledger">
     <thead><tr><th>id</th><th>nome</th><th>custo</th><th>efeito</th></tr></thead>
     <tbody>
@@ -97,6 +102,12 @@
         <td>Turbo de Pesca</td>
         <td><span class="num">200</span> twishcoins</td>
         <td>cooldown de 20s por 5 min</td>
+      </tr>
+      <tr>
+        <td class="id">turbo_torneio</td>
+        <td>Turbo Torneio</td>
+        <td><span class="num">250</span> twishcoins</td>
+        <td>cooldown de 10s por 3 min — só durante um torneio, 1x por torneio, e quem entrou nele</td>
       </tr></tbody>
   </table>
   <p>Tem também uma versão exclusiva pra quem cheera bits: cheerar pelo

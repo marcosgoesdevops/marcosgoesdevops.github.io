@@ -161,21 +161,32 @@
 
 <section class="block">
   <h2>Torneio</h2>
-  <p>Só o streamer inicia, com <code>$torneio</code>. Dura 30 minutos —
-  toda pescaria de qualquer pessoa no canal conta automaticamente, sem
-  precisar "entrar". Vence quem pescar o maior peixe (raridade primeiro,
-  peso como desempate, igual ao <code>$ranking</code>) na janela, e leva
-  <strong>todos os peixes pescados por todo mundo</strong> durante o
-  torneio, além de 150 twishcoins de bônus. Perder o torneio não afeta o
-  <code>best_catch</code> de ninguém no <code>$ranking</code> — só o
-  estoque muda de mãos. Use <code>$rankingtorneio</code> (ou
-  <code>$rt</code>) a qualquer momento pra ver o top 3 atual e quanto
-  tempo falta — o bot também publica esse ranking sozinho a cada 10
-  minutos enquanto o torneio estiver rolando. Duelos ficam bloqueados
-  (só desafios novos) enquanto um torneio está rolando. Quem não for o
-  streamer e digitar <code>$torneio</code> recebe essa explicação de
-  volta — pra ver se um está rolando agora, o comando é
-  <code>$rankingtorneio</code>/<code>$rt</code>.</p>
+  <p>Só o streamer inicia, com <code>$torneio</code>. Dura 3 minutos, mas
+  <strong>participar é opcional</strong>: só conta quem digitar
+  <code>$entrar</code> nos primeiros
+  2:30 — depois disso a entrada fecha, mas quem já
+  entrou continua pescando normalmente até o fim. Entrar já zera seu
+  cooldown na hora, pra dar pra pescar imediatamente.</p>
+  <p>Vence quem pescar o maior peixe entre quem entrou (raridade
+  primeiro, peso como desempate, igual ao <code>$ranking</code>), e leva
+  <strong>todos os peixes de quem entrou</strong> — não só de quem
+  pescou, de <em>todo mundo que participou</em> — além de 150 twishcoins
+  de bônus. Perder o torneio não afeta o <code>best_catch</code> de
+  ninguém no <code>$ranking</code> — só o estoque muda de mãos. <code>$vender</code>
+  fica bloqueado (qualquer peixe, não só os do torneio) enquanto um
+  torneio estiver rolando no canal. Quando termina, o cooldown de
+  <strong>todo mundo</strong> reseta — participante ou não.</p>
+  <p>Use <code>$rankingtorneio</code> (ou <code>$rt</code>) a qualquer
+  momento pra ver o top 3 atual entre quem entrou e quanto tempo falta —
+  o bot também publica esse ranking sozinho a cada 10 minutos enquanto o
+  torneio estiver rolando. Duelos ficam bloqueados (só desafios novos)
+  enquanto um torneio está rolando. Quem não for o streamer e digitar
+  <code>$torneio</code> recebe essa explicação de volta — pra ver se um
+  está rolando agora, o comando é <code>$rankingtorneio</code>/<code>$rt</code>.</p>
+  <p>Quem entrou também pode comprar o <strong>Turbo Torneio</strong>
+  (<code>$comprar turbo_torneio</code>, veja a <code>$loja</code>) — reduz
+  seu cooldown pra 10s durante o torneio, no máximo uma vez por torneio, e
+  o efeito para na hora se o torneio acabar antes do tempo dele passar.</p>
 </section>
 
 <section class="block">
@@ -198,6 +209,7 @@
     <li><code>$duelar &lt;oponente&gt;</code><span>desafia alguém pra um duelo (bloqueado durante torneio)</span></li>
     <li><code>$aceitar &lt;oponente&gt;</code><span>aceita um duelo organizado</span></li>
     <li><code>$torneio</code><span>(streamer) inicia torneio de maior peixe</span></li>
+    <li><code>$entrar</code> / <code>$join</code><span>participa do torneio ativo (só nos primeiros 2:30)</span></li>
     <li><code>$rankingtorneio</code> / <code>$rt</code><span>ranking atual do torneio</span></li>
     <li><code>$comandos</code><span>link da lista completa de comandos</span></li>
     <li><code>$tutorial</code><span>link desta página</span></li>
