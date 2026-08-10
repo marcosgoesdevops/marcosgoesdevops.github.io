@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Duelos — Pescaria do Chat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎣</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">🎣 Pescaria do Chat</a>
+  <nav class="site-nav">
+      <a href="index.html">Início</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="loja.html">Loja</a>
+      <a href="niveis.html">Níveis</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="duelos.html" class="active">Duelos</a>
+  </nav>
+</header>
+<main>
+
+<h1 class="page-title">Duelos</h1>
+<p class="subtitle">Desafie qualquer espectador pra uma pescaria 1x1 — sem precisar de moderador.</p>
+
+<section class="block">
+  <h2>Como desafiar</h2>
+  <p><code>$duelar &lt;oponente&gt;</code> — digitar o desafio já conta
+  como seu aceite, então só o oponente precisa confirmar com
+  <code>$aceitar &lt;desafiante&gt;</code>, em até <strong>5
+  minutos</strong>. Se o tempo passar sem resposta, o desafio expira
+  sozinho, sem nenhuma penalidade pra ninguém — nada de fato aconteceu.</p>
+  <p>Cada jogador só pode estar em <strong>um</strong> desafio (pendente ou
+  ativo) por vez, e não dá pra desafiar (nem ser desafiado) enquanto
+  estiver no cooldown pós-duelo (veja abaixo). Duelos também ficam
+  <strong>bloqueados por completo</strong> enquanto um torneio está
+  rolando no canal — nenhum desafio novo é aceito até o torneio acabar.</p>
+</section>
+
+<section class="block">
+  <h2>A jogada</h2>
+  <p>Assim que o duelo é confirmado, o cooldown de <code>$pescar</code>
+  dos dois é zerado na hora — o <strong>próximo</strong> <code>$pescar</code>
+  de cada um é a jogada que decide o duelo. O resto do chat continua
+  pescando normalmente ao mesmo tempo; não precisa esperar sua vez nem
+  nada do tipo. Se um dos dois não pescar dentro de
+  <strong>1 minuto(s)</strong> depois da confirmação, o
+  duelo expira sem vencedor — de novo, sem penalidade, como se o duelo
+  nunca tivesse acontecido.</p>
+</section>
+
+<section class="block">
+  <h2>Resultado</h2>
+  <p>Compara-se a captura de cada lado — raridade primeiro, peso como
+  desempate, exatamente a mesma comparação do <code>$ranking</code>.</p>
+  <ul class="command-list">
+    <li><span>Os dois erram</span><span>empate, nada muda</span></li>
+    <li><span>Só um pesca algo</span><span>vitória por W.O. — o vencedor
+      fica com o próprio peixe e ganha 5 twishcoins
+      de bônus</span></li>
+    <li><span>Os dois pescam, capturas diferentes</span><span>quem tiver a
+      melhor captura vence e leva o peixe do perdedor também</span></li>
+    <li><span>Os dois pescam, captura idêntica (mesma raridade e
+      peso)</span><span>empate exato, nada muda</span></li>
+  </ul>
+  <p>A transferência de peixe é só estoque (vendável) — nunca afeta o
+  <code>best_catch</code> de ninguém, então perder um duelo nunca
+  prejudica sua posição no <code>$ranking</code>.</p>
+</section>
+
+<section class="block">
+  <h2>Com Anzol Duplo/Triplo</h2>
+  <p>Se você tem um <a href="loja.html">Anzol Duplo ou Triplo</a> e pesca
+  mais de um peixe na jogada que decide o duelo, só o <strong>melhor</strong>
+  deles (o de maior raridade, depois peso) é usado pra decidir quem
+  ganha. Mas o risco é por todos: se você <strong>perder</strong>, o
+  vencedor leva <strong>todos</strong> os peixes que você pescou naquela
+  jogada, não só o melhor. Se você vencer ou empatar, fica com todos eles
+  normalmente — o hook não muda suas chances de ganhar o duelo, só o
+  tamanho da aposta se você perder.</p>
+  <p>Enquanto o duelo não termina, nenhum peixe pescado nessa jogada é
+  vendido automático mesmo com <code>$autovenda</code> ligado — qualquer
+  um deles ainda pode precisar mudar de dono.</p>
+</section>
+
+<section class="block">
+  <h2>Depois do duelo</h2>
+  <p>Só quando o duelo é <strong>efetivamente resolvido</strong> (empate,
+  vitória por W.O. ou vitória com peixe transferido) os dois participantes
+  entram num cooldown de <strong>30 minutos</strong>
+  antes de poderem duelar de novo — um desafio que expira sem resposta, ou
+  uma jogada que expira sem ninguém pescar, <strong>não</strong> aplica
+  esse cooldown, já que nada de fato aconteceu.</p>
+</section>
+
+<section class="block">
+  <h2>Comandos</h2>
+  <ul class="command-list">
+    <li><code>$duelar &lt;oponente&gt;</code><span>desafia alguém pra um duelo (bloqueado durante torneio)</span></li>
+    <li><code>$aceitar &lt;oponente&gt;</code><span>aceita um duelo organizado</span></li>
+  </ul>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p>Pescaria do Chat — minigame de pesca pro chat da Twitch. Comandos usam o prefixo <code>$</code>.</p>
+</footer>
+</body>
+</html>
