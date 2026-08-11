@@ -56,8 +56,10 @@
     <li><code>$titulos</code><span>títulos exclusivos já vendidos/disponíveis no canal</span></li>
     <li><code>$loja</code><span>link da página de loja</span></li>
     <li><code>$comprar &lt;id&gt; [qtd]</code><span>compra uma vara ou isca</span></li>
-    <li><code>$vender &lt;id|todos&gt; [qtd]</code><span>vende peixes do inventário (todos vende tudo)</span></li>
-    <li><code>$autovenda &lt;on|off&gt;</code><span>ativa/desativa venda automática de todo peixe pescado</span></li>
+    <li><code>$vender &lt;id|todos|categoria&gt; [qtd]</code><span>vende peixes do inventário (todos vende tudo, categoria ex: <code>$vender comum</code> vende uma raridade — os dois pulam peixes da sua <code>$whitelist</code>)</span></li>
+    <li><code>$autovenda &lt;on|off&gt;</code><span>ativa/desativa venda automática de todo peixe pescado (também pula peixes da sua <code>$whitelist</code>)</span></li>
+    <li><code>$whitelist &lt;id&gt;</code> / <code>$wl</code><span>protege uma espécie de <code>$vender todos</code>/<code>&lt;categoria&gt;</code> e do <code>$autovenda</code> (sem argumento: mostra sua whitelist)</span></li>
+    <li><code>$whitelistremove &lt;id&gt;</code> / <code>$wlr</code><span>remove uma espécie da whitelist</span></li>
     <li><code>$duelar &lt;oponente&gt;</code><span>desafia alguém pra um duelo (bloqueado durante torneio) — veja a <a href="duelos.html">página de duelos</a></span></li>
     <li><code>$aceitar &lt;oponente&gt;</code><span>aceita um duelo organizado</span></li>
     <li><code>$entrar</code> / <code>$join</code><span>participa do torneio ativo (só nos primeiros 2:30)</span></li>

@@ -243,17 +243,11 @@
   disponível no jogo</strong> — é um adiantamento do que já foi planejado.
   Comandos, números e nomes podem mudar até o lançamento.</p>
 
-  <h3>Sexo dos peixes</h3>
-  <p>Todo peixe capturado vai ter um sexo (macho ou fêmea), sorteado no
-  momento da pescaria. Os peixes que você já tem no estoque hoje também
-  vão receber um sexo sorteado quando essa atualização for lançada.</p>
-
   <h3>Peixe "breedable"</h3>
-  <p>Nem todo peixe serve pra cruzar ou pra vender pra outro jogador: só
-  conta como <strong>breedable</strong> um peixe que pese pelo menos
-  <strong>60% do peso máximo oficial da espécie</strong>. Um exemplar
-  pequeno da mesma espécie não serve, mesmo saudável — precisa ser um
-  peixe de bom tamanho.</p>
+  <p>Nem todo peixe serve pra cruzar: só conta como
+  <strong>breedable</strong> um peixe que pese pelo menos
+  <strong>1kg</strong>. Um exemplar pequeno da mesma espécie não serve,
+  mesmo saudável — precisa ser um peixe de bom tamanho.</p>
 
   <h3>Como cruzar</h3>
   <p>Vão existir dois itens novos na loja, cada um um kit de reprodução
@@ -263,10 +257,9 @@
     <li><span>🐣 Kit avançado</span><span>200 twishcoins — 60% de chance de dar certo</span></li>
   </ul>
   <p>Com o item em mãos, <code>$cruzar &lt;espécie&gt;</code> (nome
-  provisório) usa automaticamente o seu macho mais pesado e a sua fêmea
-  mais pesada breedable daquela espécie. Falta um dos dois sexos? O
-  comando recusa. Os pais <strong>não são consumidos</strong> — continuam
-  no seu estoque, podendo cruzar de novo depois.</p>
+  provisório) precisa de <strong>2 peixes breedable</strong> daquela
+  espécie no seu estoque. Nenhum dos dois é consumido — continuam lá,
+  podendo cruzar de novo depois.</p>
 
   <h3>O filhote</h3>
   <p>Se der certo, nasce um filhote da mesma espécie, com peso sorteado
@@ -274,21 +267,9 @@
   menor. Ele rende os mesmos pontos e xp que a versão selvagem valeria.
   Ainda assim, cruzar <strong>não conta como uma captura</strong>: não
   entra no <code>$hoje</code>, e nunca vira recorde no
-  <code>$ranking</code>.</p>
-
-  <h3>Vendendo peixes entre jogadores</h3>
-  <p>Um mercado vai facilitar comprar peixes breedable de outros
-  jogadores. Só peixes breedable podem ser anunciados. Pra anunciar,
-  manda uma DM pro bot com <code>$anunciar &lt;peixe_id&gt;</code> — se
-  você tiver mais de um peixe elegível daquela espécie, o bot pergunta
-  qual (mostrando sexo e peso de cada opção) e depois pergunta o preço
-  (entre 1 e 999.999 twishcoins). Anunciar <strong>reserva o peixe na
-  hora</strong>, tirando ele do seu estoque disponível até vender ou você
-  cancelar com <code>$cancelaranuncio &lt;id&gt;</code> (ou
-  <code>$can &lt;id&gt;</code>). Pra comprar, é
-  <code>$comprarpeixe &lt;id&gt;</code> (ou <code>$cop &lt;id&gt;</code>),
-  no chat do canal. Os anúncios disponíveis ficam listados numa página
-  nova do site.</p>
+  <code>$ranking</code>. Na hora de vender, um filhote tem
+  <strong>20% de desconto</strong> sobre o valor que teria se fosse
+  selvagem.</p>
 </section>
 
 </main>
