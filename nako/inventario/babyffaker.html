@@ -6,7 +6,7 @@
 <title>Inventário de babyffaker — Pescaria do Chat</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎣</text></svg>">
 </head>
@@ -30,124 +30,181 @@
 
 <section class="block">
   <h2>Resumo</h2>
-  <table class="ledger">
-    <tbody>
-      <tr><td>Nível</td><td>3</td></tr>
-      <tr><td>Melhor captura</td><td>pirarucu (174.21kg)</td></tr>
-      <tr><td>Vara equipada</td><td>Vara de Bambu</td></tr>
-      <tr><td>Varas possuídas</td><td>Vara de Bambu, Vara de Fibra de Vidro</td></tr>
-      <tr><td>Iscas em estoque</td><td>nenhuma</td></tr>
-      <tr><td>Saldo</td><td class="num">120 twishcoins</td></tr>
-    </tbody>
-  </table>
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-icon"><span class="emoji-icon">🐋</span></div>
+      <div class="stat-label">Melhor captura</div>
+      <div class="stat-value">pirarucu (174.21kg)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><img src="../../assets/items/vara_bambu.png" alt="" loading="lazy"></div>
+      <div class="stat-label">Vara equipada</div>
+      <div class="stat-value">Vara de Bambu</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><img src="../../assets/icons/coin.png" alt="" loading="lazy"></div>
+      <div class="stat-label">Saldo</div>
+      <div class="stat-value num">120 twishcoins</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><span class="emoji-icon">🌟</span></div>
+      <div class="stat-label">Nível</div>
+      <div class="stat-value">3</div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>Equipamento</h2>
+  <h3>Varas possuídas</h3>
+  <div class="icon-row"><div class="icon-chip"><img src="../../assets/items/vara_bambu.png" alt="" loading="lazy"><span>Vara de Bambu</span></div><div class="icon-chip"><img src="../../assets/items/vara_fibra.png" alt="" loading="lazy"><span>Vara de Fibra de Vidro</span></div></div>
+  <h3>Iscas em estoque</h3>
+  <div class="icon-row"><p class="empty-state">nenhuma em estoque.</p></div>
 </section>
 
 <section class="block">
   <h2>Espécies capturadas</h2>
-  <table class="ledger">
-    <thead><tr><th>espécie</th><th>quantidade</th><th>melhor peso</th></tr></thead>
-    <tbody>
-      <tr class="rank-row">
-        <td>robalo <span class="fid">[robalo]</span></td>
-        <td class="num">3</td>
-        <td class="num">6.75kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>cascudo <span class="fid">[cascudo]</span></td>
-        <td class="num">3</td>
-        <td class="num">0.29kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>aracu <span class="fid">[aracu]</span></td>
-        <td class="num">2</td>
-        <td class="num">0.93kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>jundiá <span class="fid">[jundia]</span></td>
-        <td class="num">2</td>
-        <td class="num">0.93kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>pirarucu <span class="fid">[pirarucu]</span></td>
-        <td class="num">1</td>
-        <td class="num">174.21kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>trairão <span class="fid">[trairao]</span></td>
-        <td class="num">1</td>
-        <td class="num">4.35kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>pescada <span class="fid">[pescada]</span></td>
-        <td class="num">1</td>
-        <td class="num">1.99kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>manjuba <span class="fid">[manjuba]</span></td>
-        <td class="num">1</td>
-        <td class="num">0.05kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>traíra <span class="fid">[traira]</span></td>
-        <td class="num">1</td>
-        <td class="num">0.89kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>lambari <span class="fid">[lambari]</span></td>
-        <td class="num">1</td>
-        <td class="num">0.14kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>matrinxã <span class="fid">[matrinxa]</span></td>
-        <td class="num">1</td>
-        <td class="num">2.37kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>badejo <span class="fid">[badejo]</span></td>
-        <td class="num">1</td>
-        <td class="num">7.62kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>acará <span class="fid">[acara]</span></td>
-        <td class="num">1</td>
-        <td class="num">0.21kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>curimatá <span class="fid">[curimata]</span></td>
-        <td class="num">1</td>
-        <td class="num">2.34kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>namorado <span class="fid">[namorado]</span></td>
-        <td class="num">1</td>
-        <td class="num">2.74kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>jaú gigante <span class="fid">[jau_gigante]</span></td>
-        <td class="num">1</td>
-        <td class="num">42.8kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>bicuda <span class="fid">[bicuda]</span></td>
-        <td class="num">1</td>
-        <td class="num">2.35kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>mandi <span class="fid">[mandi]</span></td>
-        <td class="num">1</td>
-        <td class="num">0.36kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>piau <span class="fid">[piau]</span></td>
-        <td class="num">1</td>
-        <td class="num">0.63kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>piapara <span class="fid">[piapara]</span></td>
-        <td class="num">1</td>
-        <td class="num">0.58kg</td>
-      </tr></tbody>
-  </table>
+  <div class="shop-grid">
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐡</span></div>
+        <div class="item-body">
+          <h4>robalo <span class="id">[robalo]</span></h4>
+          <p class="item-effect">3x — melhor 6.75kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐟</span></div>
+        <div class="item-body">
+          <h4>cascudo <span class="id">[cascudo]</span></h4>
+          <p class="item-effect">3x — melhor 0.29kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐠</span></div>
+        <div class="item-body">
+          <h4>aracu <span class="id">[aracu]</span></h4>
+          <p class="item-effect">2x — melhor 0.93kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐟</span></div>
+        <div class="item-body">
+          <h4>jundiá <span class="id">[jundia]</span></h4>
+          <p class="item-effect">2x — melhor 0.93kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐋</span></div>
+        <div class="item-body">
+          <h4>pirarucu <span class="id">[pirarucu]</span></h4>
+          <p class="item-effect">1x — melhor 174.21kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐡</span></div>
+        <div class="item-body">
+          <h4>trairão <span class="id">[trairao]</span></h4>
+          <p class="item-effect">1x — melhor 4.35kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐠</span></div>
+        <div class="item-body">
+          <h4>pescada <span class="id">[pescada]</span></h4>
+          <p class="item-effect">1x — melhor 1.99kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐟</span></div>
+        <div class="item-body">
+          <h4>manjuba <span class="id">[manjuba]</span></h4>
+          <p class="item-effect">1x — melhor 0.05kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐠</span></div>
+        <div class="item-body">
+          <h4>traíra <span class="id">[traira]</span></h4>
+          <p class="item-effect">1x — melhor 0.89kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐟</span></div>
+        <div class="item-body">
+          <h4>lambari <span class="id">[lambari]</span></h4>
+          <p class="item-effect">1x — melhor 0.14kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐠</span></div>
+        <div class="item-body">
+          <h4>matrinxã <span class="id">[matrinxa]</span></h4>
+          <p class="item-effect">1x — melhor 2.37kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🦈</span></div>
+        <div class="item-body">
+          <h4>badejo <span class="id">[badejo]</span></h4>
+          <p class="item-effect">1x — melhor 7.62kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐟</span></div>
+        <div class="item-body">
+          <h4>acará <span class="id">[acara]</span></h4>
+          <p class="item-effect">1x — melhor 0.21kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐠</span></div>
+        <div class="item-body">
+          <h4>curimatá <span class="id">[curimata]</span></h4>
+          <p class="item-effect">1x — melhor 2.34kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐡</span></div>
+        <div class="item-body">
+          <h4>namorado <span class="id">[namorado]</span></h4>
+          <p class="item-effect">1x — melhor 2.74kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐋</span></div>
+        <div class="item-body">
+          <h4>jaú gigante <span class="id">[jau_gigante]</span></h4>
+          <p class="item-effect">1x — melhor 42.8kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐡</span></div>
+        <div class="item-body">
+          <h4>bicuda <span class="id">[bicuda]</span></h4>
+          <p class="item-effect">1x — melhor 2.35kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐟</span></div>
+        <div class="item-body">
+          <h4>mandi <span class="id">[mandi]</span></h4>
+          <p class="item-effect">1x — melhor 0.36kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐟</span></div>
+        <div class="item-body">
+          <h4>piau <span class="id">[piau]</span></h4>
+          <p class="item-effect">1x — melhor 0.63kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐠</span></div>
+        <div class="item-body">
+          <h4>piapara <span class="id">[piapara]</span></h4>
+          <p class="item-effect">1x — melhor 0.58kg</p>
+        </div>
+      </div></div>
 </section>
 
 </main>

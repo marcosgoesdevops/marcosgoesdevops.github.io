@@ -1,25 +1,29 @@
 
 :root {
-  --bg: #0e1a16;
-  --surface: #16241f;
-  --surface-2: #1d2e27;
-  --border: #2a3d34;
-  --text: #ede6d6;
-  --text-muted: #a9b8ae;
-  --gold: #d9a441;
-  --glow: #7cd9c9;
+  --bg: #182a3a;
+  --bg-deep: #0f1c28;
+  --panel: #3a2a1e;
+  --panel-2: #2c1f16;
+  --border: #8a6640;
+  --border-dark: #1a1109;
+  --text: #f4e4c1;
+  --text-muted: #c2ab84;
+  --gold: #f0b429;
+  --leaf: #7cb552;
+  --water: #5ab0c9;
 
-  --tier-comum: #8fa593;
-  --tier-incomum: #5b8a72;
-  --tier-raro: #3e7c89;
-  --tier-lendario: #d9a441;
-  --tier-mitico: #53277e;
-  --tier-secreto: #780606;
+  --tier-comum: #9a9a8c;
+  --tier-incomum: #7cb552;
+  --tier-raro: #5ab0c9;
+  --tier-lendario: #f0b429;
+  --tier-mitico: #a8579e;
+  --tier-secreto: #d9432e;
   --tier-nakofishes: #ff6fae;
 
-  --display: "Fraunces", Georgia, serif;
-  --body: "Public Sans", -apple-system, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --pixel: "Press Start 2P", ui-monospace, monospace;
+  --display: "Pixelify Sans", var(--pixel);
+  --body: "Pixelify Sans", -apple-system, sans-serif;
+  --mono: "VT323", ui-monospace, monospace;
 }
 
 * { box-sizing: border-box; }
@@ -28,29 +32,51 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--bg);
+  background-color: var(--bg);
   background-image:
-    radial-gradient(ellipse at top, rgba(124, 217, 201, 0.06), transparent 60%);
+    radial-gradient(circle at 18% 22%, rgba(244, 228, 193, 0.14) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 62% 68%, rgba(244, 228, 193, 0.10) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 84% 12%, rgba(244, 228, 193, 0.12) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 40% 85%, rgba(244, 228, 193, 0.08) 1.5px, transparent 1.5px),
+    radial-gradient(ellipse at top, rgba(90, 176, 201, 0.12), transparent 55%);
+  background-repeat: repeat, repeat, repeat, repeat, no-repeat;
+  background-size: 160px 160px, 210px 210px, 240px 240px, 190px 190px, 100% 100%;
   color: var(--text);
   font-family: var(--body);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 17px;
+  line-height: 1.7;
 }
 
 a { color: var(--gold); text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:focus-visible, button:focus-visible {
-  outline: 2px solid var(--glow);
-  outline-offset: 2px;
+  outline: 3px dashed var(--water);
+  outline-offset: 3px;
 }
 
 code {
   font-family: var(--mono);
-  background: var(--surface-2);
-  padding: 0.1em 0.4em;
-  border-radius: 4px;
-  font-size: 0.92em;
-  color: var(--glow);
+  background: var(--bg-deep);
+  border: 2px solid var(--border-dark);
+  padding: 0.05em 0.45em;
+  border-radius: 0;
+  font-size: 1.15em;
+  color: var(--water);
+}
+
+/* Shared "quest panel" bevel - chunky pixel border, light top-left edge,
+   dark bottom-right edge, hard offset drop-shadow. The one repeated
+   building block the whole redesign leans on instead of border-radius
+   cards, echoing an SNES-era dialogue/menu box. */
+.site-header, .site-footer, .hero, .nav-card, section.block,
+.channel-block, table.ledger, .aquario-embed iframe {
+  background: var(--panel);
+  border: 3px solid var(--border-dark);
+  border-radius: 0;
+  box-shadow:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.08),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.4),
+    5px 5px 0 rgba(0, 0, 0, 0.5);
 }
 
 .site-header {
@@ -59,65 +85,102 @@ code {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 1.25rem 2rem;
-  border-bottom: 1px solid var(--border);
+  margin: 1rem 1rem 0;
+  padding: 1rem 1.5rem;
 }
 
 .brand {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: var(--text);
-}
-.brand:hover { text-decoration: none; color: var(--gold); }
-
-.site-nav { display: flex; gap: 1.75rem; }
-.site-nav a {
-  color: var(--text-muted);
-  font-weight: 500;
-  font-size: 0.95rem;
+  font-family: var(--pixel);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--gold);
   letter-spacing: 0.02em;
-  padding-bottom: 0.2rem;
-  border-bottom: 2px solid transparent;
 }
-.site-nav a:hover { color: var(--text); text-decoration: none; }
-.site-nav a.active { color: var(--gold); border-bottom-color: var(--gold); }
+.brand:hover { text-decoration: none; color: var(--text); }
+
+.site-nav { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.site-nav a {
+  display: inline-block;
+  color: var(--text-muted);
+  background: var(--panel-2);
+  border: 2px solid var(--border-dark);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.45rem 0.7rem;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+.site-nav a:hover {
+  color: var(--text);
+  text-decoration: none;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+}
+.site-nav a.active {
+  color: var(--bg-deep);
+  background: var(--gold);
+  border-color: var(--border-dark);
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+}
 
 main {
   max-width: 880px;
   margin: 0 auto;
-  padding: 3rem 2rem 5rem;
+  padding: 2.5rem 1.5rem 5rem;
 }
 
 .site-footer {
   text-align: center;
   color: var(--text-muted);
-  font-size: 0.85rem;
-  padding: 2rem;
-  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  margin: 0 1rem 2rem;
+  padding: 1.25rem;
 }
 
-/* Hero (index) */
-.hero { padding: 3rem 0 2rem; }
+/* Hero (index) - the site's signboard */
+.hero { padding: 2.5rem 2rem; margin-bottom: 2rem; position: relative; }
 .hero h1 {
-  font-family: var(--display);
-  font-size: clamp(2.4rem, 6vw, 3.6rem);
-  font-weight: 700;
-  margin: 0 0 0.75rem;
-  line-height: 1.05;
+  font-family: var(--pixel);
+  font-size: clamp(1.1rem, 3.4vw, 1.8rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0 0 1.25rem;
+  line-height: 1.7;
 }
 .hero .accent { color: var(--gold); }
 .hero p.lede {
   color: var(--text-muted);
-  font-size: 1.15rem;
-  max-width: 42ch;
-  margin: 0 0 2.5rem;
+  font-size: 1.05rem;
+  max-width: 46ch;
+  margin: 0;
+}
+
+/* Index page only - a pixel-art illustration behind the signboard text,
+   with a dusk scrim so the text stays readable over any part of the
+   scene (image-rendering: pixelated keeps its upscaled pixels crisp
+   instead of blurring, since the source art is intentionally small). */
+.hero-art {
+  background-image:
+    linear-gradient(180deg, rgba(15, 28, 40, 0.35) 0%, rgba(15, 28, 40, 0.75) 75%),
+    url("assets/hero-dock-dusk.png");
+  background-size: cover;
+  background-position: center;
+  image-rendering: pixelated;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.hero-art h1, .hero-art p.lede {
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.6);
 }
 
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 @media (max-width: 640px) {
   .card-grid { grid-template-columns: 1fr; }
@@ -125,45 +188,56 @@ main {
 
 .nav-card {
   display: block;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
   padding: 1.5rem;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 .nav-card:hover {
   text-decoration: none;
-  border-color: var(--gold);
-  transform: translateY(-2px);
+  transform: translate(-2px, -2px);
+  box-shadow:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.08),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.4),
+    8px 8px 0 rgba(0, 0, 0, 0.5);
 }
-.nav-card .emoji { font-size: 1.8rem; }
+.nav-card .emoji {
+  font-size: 1.8rem;
+  display: inline-block;
+  filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.4));
+}
 .nav-card h3 {
-  font-family: var(--display);
-  color: var(--text);
-  margin: 0.6rem 0 0.3rem;
+  font-family: var(--pixel);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0.9rem 0 0.6rem;
 }
-.nav-card p { color: var(--text-muted); margin: 0; font-size: 0.92rem; }
+.nav-card p { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
 
 /* Generic content typography */
 h1.page-title {
-  font-family: var(--display);
-  font-size: clamp(2rem, 5vw, 2.6rem);
-  margin: 0 0 0.5rem;
+  font-family: var(--pixel);
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  text-transform: uppercase;
+  line-height: 1.7;
+  margin: 0 0 0.75rem;
 }
 p.subtitle { color: var(--text-muted); margin: 0 0 2.5rem; font-size: 1.05rem; }
 
-section.block { margin-bottom: 3rem; }
+section.block { margin-bottom: 2.5rem; padding: 1.5rem 1.75rem; }
 section.block h2 {
-  font-family: var(--display);
-  font-size: 1.5rem;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.25rem;
+  font-family: var(--pixel);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--gold);
+  line-height: 1.6;
+  border-bottom: 3px dashed var(--border);
+  padding-bottom: 0.75rem;
+  margin: 0 0 1.25rem;
 }
 section.block h3 {
   font-family: var(--body);
-  font-weight: 600;
-  color: var(--gold);
+  font-weight: 700;
+  color: var(--water);
   font-size: 1.05rem;
   margin: 1.5rem 0 0.5rem;
 }
@@ -171,46 +245,54 @@ section.block h3 {
 .command-list { list-style: none; padding: 0; margin: 0; }
 .command-list li {
   display: flex;
-  gap: 1rem;
-  padding: 0.6rem 0;
-  border-bottom: 1px dashed var(--border);
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 2px dashed var(--border);
   font-size: 0.95rem;
 }
+.command-list li:last-child { border-bottom: none; }
 .command-list code { flex: 0 0 auto; white-space: nowrap; }
 .command-list span { color: var(--text-muted); }
 
-/* Depth gauge - the signature element for rarity tiers */
+/* Depth gauge - the signature element for rarity tiers: a vertical
+   fishing-hole cross-section that darkens the deeper (rarer) it goes. */
 .depth-gauge {
   display: grid;
-  grid-template-columns: 14px 1fr;
+  grid-template-columns: 20px 1fr;
   gap: 0;
+  border: 3px solid var(--border-dark);
+  background: linear-gradient(to bottom, rgba(24, 42, 58, 0.15), rgba(6, 12, 18, 0.75));
 }
 .depth-band {
-  border-radius: 3px;
-  margin: 0.15rem 0;
+  border-radius: 0;
+  margin: 0;
+  border-right: 3px solid var(--border-dark);
+  box-shadow: inset -3px 0 0 rgba(0, 0, 0, 0.35);
 }
 .depth-row {
   display: contents;
 }
 .depth-content {
-  padding: 1rem 0 1.4rem 1.25rem;
-  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.25rem 1.25rem;
+  border-bottom: 2px dashed var(--border-dark);
 }
 .depth-row:last-child .depth-content { border-bottom: none; }
 .depth-content h4 {
-  margin: 0 0 0.35rem;
-  font-family: var(--body);
-  font-weight: 600;
-  font-size: 1.05rem;
+  margin: 0 0 0.45rem;
+  font-family: var(--pixel);
+  font-size: 0.78rem;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   gap: 0.6rem;
 }
 .depth-content .chance {
   font-family: var(--mono);
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--text-muted);
   font-weight: 400;
+  text-transform: none;
 }
 .depth-content .species {
   color: var(--text-muted);
@@ -218,10 +300,147 @@ section.block h3 {
 }
 .depth-content .species .fid {
   font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--glow);
-  opacity: 0.85;
+  font-size: 1rem;
+  color: var(--water);
+  opacity: 0.9;
 }
+
+/* Shop item grid - each catalog (rods/baits/hooks/boosters) renders as
+   item slots instead of a plain table, closer to an RPG shop screen. */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.shop-item, .inv-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.2rem 0.9rem;
+  background: var(--panel-2);
+  border: 3px solid var(--border-dark);
+  box-shadow:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.06),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.4);
+  padding: 0.75rem;
+}
+.item-icon {
+  grid-row: 1 / 3;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-deep);
+  border: 2px solid var(--border-dark);
+}
+.item-icon img {
+  width: 44px;
+  height: 44px;
+  image-rendering: pixelated;
+  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.5));
+}
+.item-icon .emoji-icon { font-size: 1.8rem; line-height: 1; }
+.item-body h4 {
+  margin: 0;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.item-body h4 .id {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  padding: 0;
+}
+.item-effect {
+  margin: 0.2rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.item-price {
+  grid-column: 2;
+  margin-top: 0.4rem;
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+.item-price .num { color: var(--gold); }
+
+/* Inventory page - character-sheet stat cards + equipment icon rows,
+   on top of the .shop-grid/.inv-item item-slot styling above. */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+.stat-card {
+  background: var(--panel-2);
+  border: 3px solid var(--border-dark);
+  box-shadow:
+    inset 2px 2px 0 rgba(255, 255, 255, 0.06),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.4);
+  padding: 0.85rem;
+  text-align: center;
+}
+.stat-icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-deep);
+  border: 2px solid var(--border-dark);
+}
+.stat-icon img {
+  width: 34px;
+  height: 34px;
+  image-rendering: pixelated;
+  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.5));
+}
+.stat-icon .emoji-icon { font-size: 1.4rem; line-height: 1; }
+.stat-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+.stat-value { font-weight: 700; color: var(--text); }
+.stat-value.num { font-family: var(--mono); font-size: 1.2rem; color: var(--gold); }
+
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0 0 1.5rem;
+}
+.icon-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--panel-2);
+  border: 2px solid var(--border-dark);
+  padding: 0.4rem 0.7rem 0.4rem 0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.icon-chip img {
+  width: 28px;
+  height: 28px;
+  image-rendering: pixelated;
+}
+.icon-chip .num { color: var(--gold); font-family: var(--mono); }
 
 /* Tables (shop, ranking) */
 table.ledger {
@@ -231,58 +450,83 @@ table.ledger {
 }
 table.ledger th {
   text-align: left;
-  font-family: var(--mono);
-  font-size: 0.75rem;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-muted);
-  border-bottom: 1px solid var(--border);
-  padding: 0.5rem 0.75rem;
+  color: var(--gold);
+  background: var(--panel-2);
+  border-bottom: 3px solid var(--border-dark);
+  padding: 0.6rem 0.85rem;
 }
 table.ledger td {
-  padding: 0.65rem 0.75rem;
-  border-bottom: 1px solid var(--border);
+  padding: 0.7rem 0.85rem;
+  border-bottom: 2px dashed var(--border);
   vertical-align: top;
 }
 table.ledger tr:last-child td { border-bottom: none; }
-table.ledger .num { font-family: var(--mono); color: var(--glow); }
-table.ledger .id { font-family: var(--mono); font-size: 0.82rem; color: var(--text-muted); }
+table.ledger .num { font-family: var(--mono); font-size: 1.1rem; color: var(--water); }
+table.ledger .id {
+  font-family: var(--mono);
+  font-size: 1rem;
+  color: var(--text-muted);
+  background: var(--panel-2);
+  border: 2px solid var(--border-dark);
+  padding: 0.05em 0.4em;
+}
 
 .rank-row .medal { font-size: 1.1rem; width: 1.6em; display: inline-block; }
 .rank-tier {
   display: inline-block;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  padding: 0.15em 0.5em;
-  border-radius: 999px;
-  border: 1px solid currentColor;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  padding: 0.2em 0.55em;
+  border-radius: 0;
+  border: 2px solid currentColor;
+  background: var(--panel-2);
 }
 
-.channel-block { margin-bottom: 3.5rem; }
-.channel-block h2 { text-transform: lowercase; }
+.channel-block { margin-bottom: 3rem; padding: 1.5rem 1.75rem; }
+.channel-block h2 {
+  font-family: var(--pixel);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 3px dashed var(--border);
+  padding-bottom: 0.75rem;
+  margin: 0 0 1.25rem;
+}
 
 .rank-tabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+  border-bottom: none;
 }
 .rank-tab {
   font-family: var(--body);
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
   color: var(--text-muted);
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  padding: 0.6rem 0.25rem;
-  margin-bottom: -1px;
+  background: var(--panel-2);
+  border: 2px solid var(--border-dark);
+  border-radius: 0;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
+  padding: 0.55rem 0.8rem;
+  margin-bottom: 0;
   cursor: pointer;
 }
 .rank-tab:hover { color: var(--text); }
 .rank-tab[aria-selected="true"] {
-  color: var(--gold);
-  border-bottom-color: var(--gold);
+  color: var(--bg-deep);
+  background: var(--gold);
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
 }
 .rank-panel { display: none; }
 .rank-panel.active { display: block; }
@@ -292,21 +536,19 @@ main.wide { max-width: 1400px; }
 .aquario-embed iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
-  border: 0;
-  border-radius: 8px;
+  padding: 6px;
   display: block;
   background: #000;
 }
 
-
 .empty-state {
   color: var(--text-muted);
-  font-style: italic;
   padding: 1rem 0;
 }
+.empty-state::before { content: "··· "; }
 
 .generated-at {
   color: var(--text-muted);
-  font-size: 0.82rem;
+  font-size: 1rem;
   font-family: var(--mono);
 }

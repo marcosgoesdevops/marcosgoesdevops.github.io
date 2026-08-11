@@ -6,7 +6,7 @@
 <title>Inventário de fakekunrenascido — Pescaria do Chat</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎣</text></svg>">
 </head>
@@ -26,53 +26,80 @@
 <main>
 
 <h1 class="page-title">Inventário de fakekunrenascido</h1>
-<p class="subtitle">#nako — 5 peixe(s) no estoque, 131 pontos acumulados (nível 4).</p>
+<p class="subtitle">#nako — 6 peixe(s) no estoque, 133 pontos acumulados (nível 4).</p>
 
 <section class="block">
   <h2>Resumo</h2>
-  <table class="ledger">
-    <tbody>
-      <tr><td>Nível</td><td>4</td></tr>
-      <tr><td>Melhor captura</td><td>espadarte (95.59kg)</td></tr>
-      <tr><td>Vara equipada</td><td>Vara de Bambu</td></tr>
-      <tr><td>Varas possuídas</td><td>Vara de Bambu</td></tr>
-      <tr><td>Iscas em estoque</td><td>nenhuma</td></tr>
-      <tr><td>Saldo</td><td class="num">368 twishcoins</td></tr>
-    </tbody>
-  </table>
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-icon"><span class="emoji-icon">🐋</span></div>
+      <div class="stat-label">Melhor captura</div>
+      <div class="stat-value">espadarte (95.59kg)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><img src="../../assets/items/vara_bambu.png" alt="" loading="lazy"></div>
+      <div class="stat-label">Vara equipada</div>
+      <div class="stat-value">Vara de Bambu</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><img src="../../assets/icons/coin.png" alt="" loading="lazy"></div>
+      <div class="stat-label">Saldo</div>
+      <div class="stat-value num">373 twishcoins</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><span class="emoji-icon">🌟</span></div>
+      <div class="stat-label">Nível</div>
+      <div class="stat-value">4</div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>Equipamento</h2>
+  <h3>Varas possuídas</h3>
+  <div class="icon-row"><div class="icon-chip"><img src="../../assets/items/vara_bambu.png" alt="" loading="lazy"><span>Vara de Bambu</span></div></div>
+  <h3>Iscas em estoque</h3>
+  <div class="icon-row"><p class="empty-state">nenhuma em estoque.</p></div>
 </section>
 
 <section class="block">
   <h2>Espécies capturadas</h2>
-  <table class="ledger">
-    <thead><tr><th>espécie</th><th>quantidade</th><th>melhor peso</th></tr></thead>
-    <tbody>
-      <tr class="rank-row">
-        <td>acará <span class="fid">[acara]</span></td>
-        <td class="num">1</td>
-        <td class="num">0.25kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>tilápia <span class="fid">[tilapia]</span></td>
-        <td class="num">1</td>
-        <td class="num">0.89kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>garoupa <span class="fid">[garoupa]</span></td>
-        <td class="num">1</td>
-        <td class="num">4.15kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>piapara <span class="fid">[piapara]</span></td>
-        <td class="num">1</td>
-        <td class="num">0.81kg</td>
-      </tr>
-      <tr class="rank-row">
-        <td>mandi <span class="fid">[mandi]</span></td>
-        <td class="num">1</td>
-        <td class="num">0.26kg</td>
-      </tr></tbody>
-  </table>
+  <div class="shop-grid">
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐟</span></div>
+        <div class="item-body">
+          <h4>mandi <span class="id">[mandi]</span></h4>
+          <p class="item-effect">2x — melhor 0.42kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐟</span></div>
+        <div class="item-body">
+          <h4>acará <span class="id">[acara]</span></h4>
+          <p class="item-effect">1x — melhor 0.25kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐟</span></div>
+        <div class="item-body">
+          <h4>tilápia <span class="id">[tilapia]</span></h4>
+          <p class="item-effect">1x — melhor 0.89kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐡</span></div>
+        <div class="item-body">
+          <h4>garoupa <span class="id">[garoupa]</span></h4>
+          <p class="item-effect">1x — melhor 4.15kg</p>
+        </div>
+      </div>
+      <div class="inv-item">
+        <div class="item-icon"><span class="emoji-icon">🐠</span></div>
+        <div class="item-body">
+          <h4>piapara <span class="id">[piapara]</span></h4>
+          <p class="item-effect">1x — melhor 0.81kg</p>
+        </div>
+      </div></div>
 </section>
 
 </main>

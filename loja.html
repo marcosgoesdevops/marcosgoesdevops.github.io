@@ -6,7 +6,7 @@
 <title>Loja — Pescaria do Chat</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎣</text></svg>">
 </head>
@@ -35,62 +35,70 @@
   de graça. As varas pagas têm uma ordem obrigatória: só dá pra comprar
   uma vara mais avançada depois de já ter a anterior (a vara de bambu é
   grátis e não conta pra essa ordem).</p>
-  <table class="ledger">
-    <thead><tr><th>id</th><th>nome</th><th>custo</th><th>efeito</th></tr></thead>
-    <tbody>
-      <tr>
-        <td class="id">vara_bambu</td>
-        <td>Vara de Bambu</td>
-        <td>grátis</td>
-        <td>cooldown 10 min</td>
-      </tr>
-      <tr>
-        <td class="id">vara_fibra</td>
-        <td>Vara de Fibra de Vidro</td>
-        <td><span class="num">300</span> twishcoins</td>
-        <td>cooldown 8 min</td>
-      </tr>
-      <tr>
-        <td class="id">vara_carbono</td>
-        <td>Vara de Carbono</td>
-        <td><span class="num">600</span> twishcoins</td>
-        <td>cooldown 6 min — requer ter a Vara de Fibra de Vidro</td>
-      </tr>
-      <tr>
-        <td class="id">vara_encantada</td>
-        <td>Vara Encantada</td>
-        <td><span class="num">900</span> twishcoins</td>
-        <td>cooldown 4 min — requer ter a Vara de Carbono</td>
-      </tr>
-      <tr>
-        <td class="id">vara_lendaria</td>
-        <td>Vara Lendária</td>
-        <td><span class="num">10000</span> twishcoins</td>
-        <td>cooldown 1 min — requer ter a Vara Encantada</td>
-      </tr></tbody>
-  </table>
+  <div class="shop-grid">
+  <div class="shop-item">
+    <div class="item-icon"><img src="assets/items/vara_bambu.png" alt="" loading="lazy"></div>
+    <div class="item-body">
+      <h4>Vara de Bambu <span class="id">vara_bambu</span></h4>
+      <p class="item-effect">cooldown 10 min</p>
+    </div>
+    <div class="item-price">grátis</div>
+  </div>
+  <div class="shop-item">
+    <div class="item-icon"><img src="assets/items/vara_fibra.png" alt="" loading="lazy"></div>
+    <div class="item-body">
+      <h4>Vara de Fibra de Vidro <span class="id">vara_fibra</span></h4>
+      <p class="item-effect">cooldown 8 min</p>
+    </div>
+    <div class="item-price"><span class="num">300</span> twishcoins</div>
+  </div>
+  <div class="shop-item">
+    <div class="item-icon"><img src="assets/items/vara_carbono.png" alt="" loading="lazy"></div>
+    <div class="item-body">
+      <h4>Vara de Carbono <span class="id">vara_carbono</span></h4>
+      <p class="item-effect">cooldown 6 min — requer ter a Vara de Fibra de Vidro</p>
+    </div>
+    <div class="item-price"><span class="num">600</span> twishcoins</div>
+  </div>
+  <div class="shop-item">
+    <div class="item-icon"><img src="assets/items/vara_encantada.png" alt="" loading="lazy"></div>
+    <div class="item-body">
+      <h4>Vara Encantada <span class="id">vara_encantada</span></h4>
+      <p class="item-effect">cooldown 4 min — requer ter a Vara de Carbono</p>
+    </div>
+    <div class="item-price"><span class="num">900</span> twishcoins</div>
+  </div>
+  <div class="shop-item">
+    <div class="item-icon"><img src="assets/items/vara_lendaria.png" alt="" loading="lazy"></div>
+    <div class="item-body">
+      <h4>Vara Lendária <span class="id">vara_lendaria</span></h4>
+      <p class="item-effect">cooldown 1 min — requer ter a Vara Encantada</p>
+    </div>
+    <div class="item-price"><span class="num">10000</span> twishcoins</div>
+  </div></div>
 </section>
 
 <section class="block">
   <h2>Iscas (consumível)</h2>
   <p>Usada automaticamente na próxima <code>$pescar</code> (a mais forte
   primeiro), consumindo 1 unidade do estoque.</p>
-  <table class="ledger">
-    <thead><tr><th>id</th><th>nome</th><th>custo</th><th>efeito</th></tr></thead>
-    <tbody>
-      <tr>
-        <td class="id">isca_turbinada</td>
-        <td>Isca Turbinada</td>
-        <td><span class="num">20</span> twishcoins</td>
-        <td>garante fisgada</td>
-      </tr>
-      <tr>
-        <td class="id">isca_milagrosa</td>
-        <td>Isca Milagrosa</td>
-        <td><span class="num">80</span> twishcoins</td>
-        <td>garante fisgada + raro x2, lendario x2, mitico x2, secreto x2</td>
-      </tr></tbody>
-  </table>
+  <div class="shop-grid">
+  <div class="shop-item">
+    <div class="item-icon"><img src="assets/items/isca_turbinada.png" alt="" loading="lazy"></div>
+    <div class="item-body">
+      <h4>Isca Turbinada <span class="id">isca_turbinada</span></h4>
+      <p class="item-effect">garante fisgada</p>
+    </div>
+    <div class="item-price"><span class="num">20</span> twishcoins</div>
+  </div>
+  <div class="shop-item">
+    <div class="item-icon"><img src="assets/items/isca_milagrosa.png" alt="" loading="lazy"></div>
+    <div class="item-body">
+      <h4>Isca Milagrosa <span class="id">isca_milagrosa</span></h4>
+      <p class="item-effect">garante fisgada + raro x2, lendario x2, mitico x2, secreto x2</p>
+    </div>
+    <div class="item-price"><span class="num">80</span> twishcoins</div>
+  </div></div>
 </section>
 
 <section class="block">
@@ -100,22 +108,23 @@
   esse número de peixes por pescaria, nunca garante todos. Igual às varas:
   compra única por jogador, trocar de volta pra um anzol que você já tem é
   de graça, e o Anzol Triplo exige já ter o Anzol Duplo.</p>
-  <table class="ledger">
-    <thead><tr><th>id</th><th>nome</th><th>custo</th><th>efeito</th></tr></thead>
-    <tbody>
-      <tr>
-        <td class="id">anzol_duplo</td>
-        <td>Anzol Duplo</td>
-        <td><span class="num">3000</span> twishcoins</td>
-        <td>até 2 peixes por $pescar</td>
-      </tr>
-      <tr>
-        <td class="id">anzol_triplo</td>
-        <td>Anzol Triplo</td>
-        <td><span class="num">5000</span> twishcoins</td>
-        <td>até 3 peixes por $pescar — requer ter o Anzol Duplo</td>
-      </tr></tbody>
-  </table>
+  <div class="shop-grid">
+  <div class="shop-item">
+    <div class="item-icon"><img src="assets/items/anzol_duplo.png" alt="" loading="lazy"></div>
+    <div class="item-body">
+      <h4>Anzol Duplo <span class="id">anzol_duplo</span></h4>
+      <p class="item-effect">até 2 peixes por $pescar</p>
+    </div>
+    <div class="item-price"><span class="num">3000</span> twishcoins</div>
+  </div>
+  <div class="shop-item">
+    <div class="item-icon"><img src="assets/items/anzol_triplo.png" alt="" loading="lazy"></div>
+    <div class="item-body">
+      <h4>Anzol Triplo <span class="id">anzol_triplo</span></h4>
+      <p class="item-effect">até 3 peixes por $pescar — requer ter o Anzol Duplo</p>
+    </div>
+    <div class="item-price"><span class="num">5000</span> twishcoins</div>
+  </div></div>
 </section>
 
 <section class="block">
@@ -130,22 +139,23 @@
   rolando naquele momento, no máximo uma vez por torneio, e o efeito é
   cortado na hora se o torneio acabar antes dos 3 minutos passarem —
   não some no seu tempo normalmente como os outros turbos.</p>
-  <table class="ledger">
-    <thead><tr><th>id</th><th>nome</th><th>custo</th><th>efeito</th></tr></thead>
-    <tbody>
-      <tr>
-        <td class="id">turbo</td>
-        <td>Turbo de Pesca</td>
-        <td><span class="num">200</span> twishcoins</td>
-        <td>cooldown de 20s por 5 min</td>
-      </tr>
-      <tr>
-        <td class="id">turbo_torneio</td>
-        <td>Turbo Torneio</td>
-        <td><span class="num">250</span> twishcoins</td>
-        <td>cooldown de 10s por 3 min — só durante um torneio, 1x por torneio, e quem entrou nele</td>
-      </tr></tbody>
-  </table>
+  <div class="shop-grid">
+  <div class="shop-item">
+    <div class="item-icon"><img src="assets/items/turbo.png" alt="" loading="lazy"></div>
+    <div class="item-body">
+      <h4>Turbo de Pesca <span class="id">turbo</span></h4>
+      <p class="item-effect">cooldown de 20s por 5 min</p>
+    </div>
+    <div class="item-price"><span class="num">200</span> twishcoins</div>
+  </div>
+  <div class="shop-item">
+    <div class="item-icon"><img src="assets/items/turbo_torneio.png" alt="" loading="lazy"></div>
+    <div class="item-body">
+      <h4>Turbo Torneio <span class="id">turbo_torneio</span></h4>
+      <p class="item-effect">cooldown de 10s por 3 min — só durante um torneio, 1x por torneio, e quem entrou nele</p>
+    </div>
+    <div class="item-price"><span class="num">250</span> twishcoins</div>
+  </div></div>
   <p>Tem também uma versão exclusiva pra quem cheera bits: cheerar pelo
   menos 200 bits com <code>$turbo</code> em algum lugar da mensagem
   concede o mesmo cooldown fixo por <strong>10 minutos</strong> (o dobro
