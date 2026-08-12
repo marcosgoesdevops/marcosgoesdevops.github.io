@@ -82,7 +82,10 @@
 <section class="block">
   <h2>Iscas (consumível)</h2>
   <p>Usada automaticamente na próxima <code>$pescar</code> (a mais forte
-  primeiro), consumindo 1 unidade do estoque.</p>
+  primeiro), consumindo 1 unidade do estoque por rolagem — com um anzol
+  duplo/triplo, cada peixe da jogada tenta consumir sua própria isca, então
+  pra todas as suas fisgadas saírem turbinadas você precisa ter estoque
+  suficiente pra todas elas.</p>
   <div class="shop-grid">
   <div class="shop-item">
     <div class="item-icon"><img src="assets/items/isca_turbinada.png" alt="" loading="lazy"></div>
@@ -90,25 +93,27 @@
       <h4>Isca Turbinada <span class="id">isca_turbinada</span></h4>
       <p class="item-effect">garante fisgada</p>
     </div>
-    <div class="item-price"><span class="num">20</span> twishcoins</div>
+    <div class="item-price"><span class="num">10</span> twishcoins</div>
   </div>
   <div class="shop-item">
     <div class="item-icon"><img src="assets/items/isca_milagrosa.png" alt="" loading="lazy"></div>
     <div class="item-body">
       <h4>Isca Milagrosa <span class="id">isca_milagrosa</span></h4>
-      <p class="item-effect">garante fisgada + raro x2, lendario x2, mitico x2, secreto x2</p>
+      <p class="item-effect">garante fisgada + garante peixe Raro ou melhor</p>
     </div>
-    <div class="item-price"><span class="num">80</span> twishcoins</div>
+    <div class="item-price"><span class="num">50</span> twishcoins</div>
   </div></div>
 </section>
 
 <section class="block">
   <h2>Anzóis (upgrade permanente)</h2>
-  <p>Cada rolagem extra de captura em um único <code>$pescar</code> ainda
-  passa pela mesma chance de não fisgar nada — ter um anzol dá <em>até</em>
-  esse número de peixes por pescaria, nunca garante todos. Igual às varas:
-  compra única por jogador, trocar de volta pra um anzol que você já tem é
-  de graça, e o Anzol Triplo exige já ter o Anzol Duplo.</p>
+  <p>Cada rolagem extra de captura em um único <code>$pescar</code> tem sua
+  própria sorte, independente das outras, e ainda passa pela mesma chance
+  de não fisgar nada — ter um anzol dá <em>até</em> esse número de peixes
+  por pescaria, nunca garante todos. Uma isca só turbina uma dessas
+  rolagens por vez (veja a seção de Iscas acima). Igual às varas: compra
+  única por jogador, trocar de volta pra um anzol que você já tem é de
+  graça, e o Anzol Triplo exige já ter o Anzol Duplo.</p>
   <div class="shop-grid">
   <div class="shop-item">
     <div class="item-icon"><img src="assets/items/anzol_duplo.png" alt="" loading="lazy"></div>
